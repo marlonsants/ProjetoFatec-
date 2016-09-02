@@ -12,22 +12,49 @@
 
 <div class="container">
 
-	<br>
 	<div class="jumbotron" style="background-image: url('webroot/images/logo_fatec.jpg');">
+	<!--div class="jumbotron" style="background-color: white;"-->
 		<form>
-			<div class="row">
-				<center class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
-					<!-- colocar aqui talvez o codigo de barra gerado pelo numero no input -->
-					<h1>|||||||||||||||</h1>
-				</center>
-			</div>
 
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
-					<center><b>Numero do Código de Barra</b></center>
-					<input type="text" name="codigo_barra" id="codigo_barra" class="form-control">	
+			<div class="row" style="border: 2px solid #999; background-color: white;">
+				<div class="col-md-4 col-xs-4">
+					<img src="webroot/images/logo_fatec.jpg">
+				</div>
+
+				<center class="col-md-8 col-xs-8">
+				<br>
+					<h2>XX° Simposio de Xxxxxxxxxxx <br>Fatec - Jaboticabal-SP</h2>
+				</center>
+			</div><br>
+
+			<div class="row" style="border: 2px solid #999; background-color: white;">
+				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+			
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<h3><b>Nome:</b> Teste Teste Teste</h3>
+							<h3><b>E-mail:</b> Teste Teste Teste</h3>
+							<h3><b>Instituição:</b> Teste Teste Teste</h3>
+						</div>
+					</div>
+
+					<div class="row">
+						<center class="col-md-12 col-xs-12">
+							<!-- colocar aqui, talvez, o codigo de barra gerado pelo numero no input -->
+							<h1>||||||||||||||||||||||||||||</h1>
+						</center>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+							<center><label>Numero do Código de Barra</label></center>
+							<input type="text" name="codigo_barra" id="codigo_barra" class="form-control">	
+						</div>
+					</div><br>
+
 				</div>
 			</div>
+			
 
 		</form>
 	</div>
