@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../webroot/css/bootstrap.css">
-	<title>Leitor de Código de Barras</title>
+	<title>Sorteio</title>
 </head>
 
 <style type="text/css">
@@ -38,20 +38,19 @@
 							<h3><b>E-mail:</b> Teste Teste Teste</h3>
 							<h3><b>Instituição:</b> Teste Teste Teste</h3>
 						</div>
-					</div>
+					</div><br>
 
 					<div class="row">
-						<center class="col-md-12 col-xs-12">
-							<!-- colocar aqui, talvez, o codigo de barra gerado pelo numero no input -->
-							<h1>||||||||||||||||||||||||||||</h1>
-						</center>
-					</div>
-
-					<div class="row">
-						<div class="col-md-12 col-xs-12">
-							<center><label>Numero do Código de Barra</label></center>
-							<input type="text" name="codigo_barra" id="codigo_barra" class="form-control">	
+						<div class="col-md-4 col-xs-4">
+							<button id="sortear" name="sortear" class="btn btn-success col-md-12 col-xs-12">
+								Sortear
+							</button>
 						</div>
+
+						<div class="col-md-8 col-xs-8" style="font-size: 200%">
+							<?php echo rand(0, 500); ?>
+						</div>
+
 					</div><br>
 
 				</div>
