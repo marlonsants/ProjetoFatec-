@@ -15,7 +15,6 @@
 <div class="container">
 
 	<div class="jumbotron" style="background-image: url('../webroot/images/logo_fatec.jpg');">
-	<!--div class="jumbotron" style="background-color: white;"-->
 		<form>
 
 			<div class="row" style="border: 2px solid #999; background-color: white;">
