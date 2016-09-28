@@ -8,59 +8,60 @@
 </head>
 
 <style type="text/css">
-	.jumbotron{border: 1px solid #999; box-shadow: -0px -0px 45px #999;}
+	#borda{border: 1px solid #999; box-shadow: -0px -0px 45px #999;}
 </style>
 
 <body>
 
-<div class="container">
-
-	<div class="jumbotron">
+<div class="container-fluid"><br>
 	
+	<div class="row">
 
+		<div class="col-md-8 col-md-offset-2 col-xs-8" >
 
-			<div class="row" style="border: 2px solid #999; background-color: white;">
-				<div class="col-md-4 col-xs-4">
-					<img src="../webroot/images/logo_fatec.jpg">
+			<div id="borda" style="color: rgb(50,180,74);">
+				<img src="../webroot/images/borda_cima.jpg" style="width: 100%">
+
+				<div class="col-md-2 col-xs-2">
+					<img src="../webroot/images/logo_fatec.jpg" style="width: 100%;">
+					<img src="../webroot/images/FUNEP.png" style="width: 100%;">
 				</div>
 
-				<center class="col-md-8 col-xs-8">
-				<br>
-					<h3 style="color:green;font-weight: bold">IV SIMPÓSIO DE TECNOLOGIA SUCRUENERGÉTICA E DE BIOCOMBUSTÍVEIS <br>Fatec - Jaboticabal-SP</h3>
+				<div class="col-md-2 col-xs-2">
+					<img src="../webroot/images/logo_recortada.png" style="width: 100%;">
+				</div>
+
+				<div class="col-md-8 col-xs-8">
+					<h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
+				</div>
+
+				<div class="col-md-12 col-xs-12" id="borda" style=" border-color: rgb(40,145,58);"></div>
+
+				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" id="info">
+					<h3><b>Nome:</b><span id="nome"></span> </h3>
+					<h3><b>E-mail:</b><span id="email"></span> </h3>
+					<h3><b>Instituição:</b><span  id="inst"></span> </h3>
+					<h3 id="confirma" style="color:blue;text-align: center;font-weight: bold"></h3>
+				</div>
+
+				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+					<div class="col-md-4 col-xs-4">
+						<button type="button" id="sortear" name="sortear" class="btn btn-success col-md-12 col-xs-12">
+							Sortear
+						</button>
+					</div>
+
+					<div class="col-md-8 col-xs-8" style="font-size: 200%" id="nsorteado">
+						<?php require_once('../config/funcoesmysql.php'); ?>
+					</div>
 					
-				</center>
-			</div><br>
-
-			<div class="row" style="border: 2px solid #999; background-color: white;">
-				<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
-			
-					<div class="row">
-						<div class="col-md-12 col-xs-12">
-							<h3><b>Nome:</b><span id="nome"></span> </h3>
-							<h3><b>E-mail:</b><span id="email"></span> </h3>
-							<h3><b>Instituição:</b><span  id="inst"></span> </h3>
-						</div>
-					</div><br>
-
-					<div class="row">
-						<div class="col-md-4 col-xs-4">
-							<button type="button" id="sortear" name="sortear" class="btn btn-success col-md-12 col-xs-12">
-								Sortear
-							</button>
-						</div>
-
-						<div class="col-md-8 col-xs-8" style="font-size: 200%" id="nsorteado">
-							<?php
-							require_once('../config/funcoesmysql.php');
-							 ?>
-						</div>
-
-					</div><br>
-
 				</div>
-			</div>
-			
 
+				<img src="../webroot/images/borda_baixo.jpg" style="width: 100%">
+			</div>
+				
+		</div>
+		
 	</div>
 </div>
 
