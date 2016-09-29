@@ -5,8 +5,7 @@
 	<title></title>
 	<script type="text/javascript" src="../webroot/js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="../webroot/js/jquery-ui.js"></script>
-	<link rel="stylesheet" type="text/css" href="../webroot/css/style.css" >
-	<link rel="stylesheet" type="text/css" href="../webroot/css/print.css" media="print" >
+	
 	
 </head> 
 
@@ -25,7 +24,7 @@ echo '</center>';
 echo'</div>';
 
 for($x=1;$x<33;$x++){
-	echo '<div class="view" style="height:90px;width:234px;border:2px solid black ;padding:0px;margin:2px">';
+	echo '<div class="view">';
 	
 	echo '</div>';
 
@@ -37,7 +36,18 @@ for($x=1;$x<33;$x++){
 
 
 <STYLE TYPE="text/css">
+	.view{
+		display: inline-block;
+		height:90px;
+		width:234px;
+		border:2px solid black ;
+		padding:0px;
+		margin:2px;
+	}
 
+	@media print{
+		.view{display: none}
+	}
 
 	p{
 		text-align: center;
@@ -45,9 +55,8 @@ for($x=1;$x<33;$x++){
 		padding: 0px;
 	}
 	body{
-		display: block;
-		margin:0px;
-		padding: 0px;
+		
+		margin-top: 20px;
 		width: 793.700px;
 		
 
