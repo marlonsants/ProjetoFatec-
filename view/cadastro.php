@@ -35,7 +35,7 @@
 					</div>
 
 					<div class="col-md-8 col-xs-8">
-						<h2>IV Simposio de Técnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
+						<h2>IV Simpósio de Tecnologia Sucroenergética e de Biocombustíveis<br>Fatec - Jaboticabal-SP</h2>
 					</div>
 
 					<?php include('menu.php'); ?>
