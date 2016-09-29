@@ -42,21 +42,20 @@
 
 					<div class="row">
 						<div class="col-md-10 col-md-offset-1">
+
 							<form action="../model/cadastrar.php" method="post" accept-charset="utf-8">
 								<h3><b>Nome:</b></h3>
-								<input type="nome" name="nome" class="form-control">
+								<input type="nome" name="nome" class="form-control"><br>
 
 								<div class="row">
 									<div class="col-md-4 col-md-offset-4">
-									<button class="btn btn-success" type="submit">Cadastrar e Imprimir Código de Barra</button>
+										<button class="btn btn-success" type="submit">Cadastrar e Imprimir Código de Barra</button>
 									</div>
 								</div>
 							</form>
 
 						</div>
 					</div><br>
-
-
 
 					<img src="../webroot/images/borda_baixo.jpg" style="width: 100%">
 				</div>
