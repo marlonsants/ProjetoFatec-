@@ -38,6 +38,8 @@
 						<h2>IV Simposio de Técnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
 					</div>
 
+					<?php include('menu.php'); ?>
+
 					<div class="col-md-12 col-xs-12" id="borda" style=" border-color: rgb(40,145,58);"></div><br>
 
 					<div class="row">
