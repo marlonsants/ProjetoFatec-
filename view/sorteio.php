@@ -24,6 +24,7 @@
 	    background-color: rgb(0,0,200);
 	}
 	span{color: black}
+	.glyphicon{color: white;}
 </style>
 
 <body>
@@ -34,18 +35,21 @@
 
 			<div class="col-md-10 col-md-offset-1 col-xs-8" >
 
-				<div id="borda" style="color: rgb(50,180,74);">
-					<img src="../webroot/images/borda_cima.jpg" style="width: 100%">
+				<!--div id="borda" style="color: rgb(50,180,74);"-->
+				<div id="borda" >
+                    <img src="../webroot/images/borda_cima.jpg" style="width: 100%">
 
-					<div class="col-md-2 col-xs-2">
-						<img src="../webroot/images/logo_recortada.png" style="width: 100%;">
-						<img src="../webroot/images/logo_fatec.jpg" style="width: 100%;">
+                    <div class="col-md-2 col-xs-2">
+                    	<img src="../webroot/images/fatec_logo.jpg" style="width: 100%;">
+                    </div>
 
-					</div>
+                    <div class="col-md-2 col-xs-2">
+                        <img src="../webroot/images/logo_recortada.png" style="width: 100%; height: 130px">
+                    </div>
 
-					<div class="col-md-8 col-md-offset-1 col-xs-8"><br><br><br>
-						<h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
-					</div>
+                    <div class="col-md-8 col-xs-8" style="color: rgb(50,180,74);">
+                        <h2>IV SIMPOSIO DE TECNOLOGIA SUCROENERGETICA E DE BIOCOMBUSTIVEIS<br>FATEC - JABOTICABAL-SP</h2>
+                    </div>
 
 					<?php include('menu.php'); ?>
 
