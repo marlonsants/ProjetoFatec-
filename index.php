@@ -20,18 +20,19 @@
         <div class="row">
 
             <div class="col-md-8 col-md-offset-2 col-xs-8" >
-
-                <div id="borda" style="color: rgb(50,180,74);">
+                <div id="borda" >
                     <img src="webroot/images/borda_cima.jpg" style="width: 100%">
 
                     <div class="col-md-2 col-xs-2">
-                        <img src="webroot/images/logo_recortada.png" style="width: 100%;">
-                        <img src="webroot/images/logo_fatec.jpg" style="width: 100%;">
-                
+                        <img src="webroot/images/fatec_logo.jpg" style="width: 100%;">
                     </div>
 
-                    <div class="col-md-8 col-md-offset-1 col-xs-8">
-                        <h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
+                    <div class="col-md-2 col-xs-2">
+                        <img src="webroot/images/logo_recortada.png" style="width: 100%; height: 130px">
+                    </div>
+
+                    <div class="col-md-8 col-xs-8" style="color: rgb(50,180,74);">
+                        <h2>IV SIMPOSIO DE TECNOLOGIA SUCROENERGETICA E DE BIOCOMBUSTIVEIS<br>FATEC - JABOTICABAL-SP</h2>
                     </div>
 
                     <div class="col-md-12 col-xs-12" id="borda" style=" border-color: rgb(40,145,58);"></div>
