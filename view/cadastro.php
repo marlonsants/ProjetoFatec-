@@ -45,8 +45,12 @@
 						<div class="col-md-10 col-md-offset-1">
 
 							<form action="../model/cadastrar.php" method="post" accept-charset="utf-8">
-								<h3><b>Nome:</b></h3>
-								<input type="nome" id="inptnome" name="nome" class="form-control"><br>
+								<h4><b>Nome:</b></h4>
+								<input type="text" id="inptnome" name="nome" class="form-control"><br>
+								<h4><b>E-mail:</b></h4>
+								<input type="text" id="inptemail" name="email" class="form-control"><br>
+								<h4><b>Instituição:</b></h4>
+								<input type="text" id="inptinst" name="inst" class="form-control"><br>
 
 								<div class="row">
 									<div class="col-md-4 col-md-offset-4">

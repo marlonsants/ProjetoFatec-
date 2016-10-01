@@ -9,55 +9,67 @@
 	
 </head> 
 
-<?php
-require_once('../config/funcoesmysql.php');
-$codigo = $_GET['cod_bar'];
+<body>
+	<?php
+	require_once('../config/funcoesmysql.php');
+	$codigo = $_GET['cod_bar'];
 
-$etiqueta = select( '*','participante', 'cod_bar = ' . $codigo);
+	$etiqueta = select( '*','participante', 'cod_bar = ' . $codigo);
 
-echo '<div id="etiqueta" style="display:inline-block;height:90px;width:234px;border:2px solid black ;padding:0px;margin:2px">';
-echo'<center style="padding:0px;margin:0px">';
-echo'<p>Nome:'.$etiqueta[0]['nome'].'</p>';
-geraCodigoBarra($etiqueta[0]['cod_bar']);
-echo '<br>'.$etiqueta[0]['cod_bar'];
-echo '</center>';
-echo'</div>';
+	echo '<div id="etiqueta" class="print">';
+	echo'<center >';
+	echo'<p style="font-size:12px;">'.strtoupper($etiqueta[0]['nome']).'</p>';
+	geraCodigoBarra($etiqueta[0]['cod_bar']);
+	echo '<br>'.$etiqueta[0]['cod_bar'];
+	echo '</center>';
+	echo'</div>';
 
-for($x=1;$x<33;$x++){
-	echo '<div class="view">';
-	
-	echo '</div>';
+	for($x=0;$x<32;$x++){
 
-}
+		echo '<div class="view">';
 
-?>
+		echo '</div>';
+		
+	}	
+
+	?>
 
 
-
-
+</body>
 <STYLE TYPE="text/css">
+	.print{
+		display: inline-block;
+		height:2.8cm;
+		width:6.6cm;
+		padding:0px;
+		margin-bottom: 0cm;
+		margin-top: 0cm;
+		margin-right: 0.4cm;
+	}
 	.view{
 		display: inline-block;
-		height:90px;
-		width:234px;
-		border:2px solid black ;
+		height:2.8cm;
+		width:6.6cm;
+		border:1px solid black ;
 		padding:0px;
-		margin:2px;
+		margin-bottom: 0cm;
+		margin-top: 0cm;
+		margin-right: 0.4cm;
 	}
 
-	@media print{
+	@media prinst{
 		.view{display: none}
 	}
 
 	p{
 		text-align: center;
 		margin: 0px;
-		padding: 0px;
+		padding-top: 10px;
 	}
 	body{
-		
-		margin-top: 20px;
-		width: 793.700px;
+		margin-right: 0.5cm;
+		width: 23cm;
+		height: 29.5cm;
 		
 
 	}
