@@ -44,10 +44,15 @@
 					<div class="col-md-12 col-xs-12" id="borda" style=" border-color: rgb(40,145,58);"></div>
 
 					<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" id="info">
-						<h3 class="col-md-12 col-xs-12"><b>Nome:</b><span id="nome"></span> </h3>
-
+					<div class="row">
+						<h3 class="col-md-2 col-xs-2"><b>Nome:</b></h3>
+						<h3 class="col-md-10 col-xs-10" id="nome"></h3>
+					</div>
+					
+					<div class="row">
 						<h3 class="col-md-2 col-xs-2"><b>Status: </b></h3>
-						<h3 class="col-md-10 col-xs-10" id="confirma"></h3>
+						<h4 class="col-md-10 col-xs-10" id="confirma"></h4>
+					</div>
 					</div>
 
 					<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
