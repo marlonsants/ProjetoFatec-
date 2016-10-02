@@ -37,39 +37,38 @@
 
 </body>
 <STYLE TYPE="text/css">
+
 	.print{
 		display: inline-block;
-		height:2.8cm;
-		width:6.6cm;
+		height:3.4cm !important;
+		width:8.3cm !important;
 		padding:0px;
-		margin-bottom: 0cm;
-		margin-top: 0cm;
-		margin-right: 0.4cm;
+		margin-bottom: -1cm !important; 
+		margin-top: 0cm !important;
+		margin-right: 0.3cm !important;
+		border-radius: 10px;
 	}
-	.view{
+	.view{	
 		display: inline-block;
-		height:2.8cm;
-		width:6.6cm;
+		height:3.4cm !important;
+		width:8.3cm !important;
 		border:1px solid black ;
 		padding:0px;
-		margin-bottom: 0cm;
-		margin-top: 0cm;
-		margin-right: 0.4cm;
+		margin-bottom: -1px !important; 
+		margin-top: 0cm !important;
+		margin-right: 0.3cm !important;
+		border-radius: 10px;
 	}
 
-	@media prinst{
-		.view{display: none}
+	@media print{
+		.view{display: none !important}
 	}
 
-	p{
-		text-align: center;
-		margin: 0px;
-		padding-top: 10px;
-	}
+	
 	body{
-		margin-right: 0.5cm;
-		width: 23cm;
-		height: 29.5cm;
+		margin-top: 0.4cm !important;
+		width: 26cm !important;
+		height: 29.7cm !important;
 		
 
 	}
