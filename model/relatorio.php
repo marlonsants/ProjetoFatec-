@@ -28,7 +28,7 @@ header("Content-Disposition: attachment; filename=Relatorios.xls");
 			foreach ($usuarios as $key => $value) {
 				echo'<tr>';
 				echo'<td style="color:blue">' . $value['cod_bar']. '</td>';
-				echo'<td style="color:blue">' . $value['nome']. 	  '</td>';
+				echo'<td style="color:black">' . $value['nome']. 	  '</td>';
 				if($value['dia_1'] == 1 ){
 					echo'<td style="color:green">Presente</td>';
 				}else{
