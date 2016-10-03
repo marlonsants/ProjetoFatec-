@@ -52,8 +52,8 @@
 					<div class="col-md-12 col-xs-12" id="borda" style=" border-color: rgb(40,145,58);"></div>
 
 					<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" id="info">
-						<h2 style="text-align: center"><b>O nome do sortudo é:</b><span id="nome"></span> </h2>
-						<h2 style="text-align: center"><b>Código do crachá Nº:</b><span id="codigoBarra"></span> </h2>
+						<h3><b>O nome do(a) sortudo(a) é:</b><span id="nome"></span> </h3>
+						<h3><b>Código do crachá Nº:</b><span id="codigoBarra"></span> </h3>
 						<h2 id="confirma" style="color:blue;text-align: center;font-weight: bold"></h2>
 
 						<div id="myProgress" class="progress">
