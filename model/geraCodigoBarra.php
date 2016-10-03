@@ -29,7 +29,7 @@
 			foreach ($participantes as $key => $value) {
 				echo '<div style="display:inline-block;height:90px;width:234px;border:solid black 2px;padding:0px;margin:2px">';
 				echo'<center style="padding:0px;margin:0px">';
-				echo'<p>Nome:'.$value['nome'].'</p>';
+				echo'<p style="font-size:9px">'.strtoupper($value['nome']).'</p>';
 				geraCodigoBarra($value['cod_bar']);
 				echo '<br>'.$value['cod_bar'];
 				echo '</center>';
