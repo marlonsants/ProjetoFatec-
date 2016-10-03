@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Fatec</title>
     <link rel="stylesheet" href='webroot/css/bootstrap.min.css'>
-    <script src='webroot/js/jquery-2.1.1.min'></script>
+    <script src='webroot/js/jquery-2.1.1.min.js'></script>
     <script src='webroot/js/bootstrap.min.js'></script>
 </head>
 

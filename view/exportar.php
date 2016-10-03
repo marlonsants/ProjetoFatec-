@@ -7,7 +7,7 @@
 <title>Driver de exportação<</title>
 <link rel="stylesheet" href='../webroot/css/bootstrap.min.css'>
 <link rel="stylesheet" href='../webroot/css/style.css'>
-    <script src='../webroot/js/jquery-2.1.1.min'></script>
+    <script src='../webroot/js/jquery-2.1.1.min.js'></script>
     <script src='../webroot/js/bootstrap.min.js'></script>
      <script src='../webroot/js/script.js'></script>
 </head>
