@@ -13,7 +13,7 @@ require_once('../config/funcoesmysql.php'); ?>
 	<div>
 		<?php
 
-		$participantes = select('*','participante','1 Limit 33');
+		$participantes = select('*','participante','1 Limit 33 OFFSET 132');
 		foreach ($participantes as $key => $value) {
 			echo '<div id="etiqueta" class="print">';
 			echo'<center >';
@@ -40,7 +40,7 @@ require_once('../config/funcoesmysql.php'); ?>
 
 		.print{
 			display: inline-block;
-			height:3.3cm !important;
+			height:3.4cm !important;
 			width:8.3cm !important;
 			padding-bottom:0px;
 			margin-top: 0cm !important;
@@ -64,6 +64,7 @@ require_once('../config/funcoesmysql.php'); ?>
 
 
 		body{
+			margin-top: 0.4cm !important;
 			width: 26cm !important;
 			height: 29.7cm !important;
 
