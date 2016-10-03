@@ -11,32 +11,19 @@
 <style type="text/css">
 	#borda{border: 1px solid #999; box-shadow: -0px -0px 45px #999;}
 
-	.barra {
-		position:relative;
-		display:block;
-		width:100%;
-		background-color:#eee;
-		padding:3px;
-		-webkit-border-radius:3px;
-		-moz-border-radius:3px;
-		-o-border-radius:3px;
-		border-radius:3px;
-		-webkit-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2);
-		-moz-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2);
-		-o-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2);
-		box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2)
+	#myProgress {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: grey;
 	}
-	.carga {
-		height:20px;
-		display:block;
-		background-color:cornflowerblue;
-		width:0%;
-		border-radius:3px;
-		-webkit-transition:width .8s ease;
-		-moz-transition:width .8s ease;
-		-o-transition:width .8s ease;
-		transition:width .8s ease
+	#myBar {
+	    position: absolute;
+	    width: 1%;
+	    height: 100%;
+	    background-color: rgb(0,0,200);
 	}
+	span{color: black}
 </style>
 
 <body>
@@ -65,27 +52,26 @@
 					<div class="col-md-12 col-xs-12" id="borda" style=" border-color: rgb(40,145,58);"></div>
 
 					<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" id="info">
-						<h2 style="text-align: center"><b>Nome:</b><span id="nome"></span> </h2>
+						<h2 style="text-align: center"><b>O nome do sortudo é:</b><span id="nome"></span> </h2>
+						<h2 style="text-align: center"><b>Código do crachá Nº:</b><span id="codigoBarra"></span> </h2>
 						<h2 id="confirma" style="color:blue;text-align: center;font-weight: bold"></h2>
+
+						<div id="myProgress" class="progress">
+  								<div id="myBar"></div>
+							</div><br><br>
 					</div>
 
 					<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
 						<div class="col-md-offset-4 col-md-4 col-xs-4">
 
-							<div class="barra-area">
-							<div class="barra ">
-									<span class="carga"></span>
-								</div>
-							</div><br><br>
+							
 							<button type="button" id="sortear" name="sortear" class="btn btn-success col-md-12 col-xs-12">
 								Sortear
 							</button>
 
 						</div>
 
-						<div class="col-md-10 col-xs-8 col-md-offset-1" style="font-size: 200%" id="nsorteado">
-							<?php require_once('../config/funcoesmysql.php'); ?>
-						</div>
+						
 
 					</div>
 
@@ -101,22 +87,26 @@
 		$(document).on('click','#sortear',function(){ 
 			var env = {};
 
-			var width = 0;
-			var tempo = 20;
-			var carga = document.querySelector('.carga');
-			var barra = setInterval(function(){
-				width = width + 0.5;
-				carga.style.width = width + '%';
-				if (width === 100){ 
-					clearInterval(barra);
-					width = 0;
-				}
-			},tempo);
+				$('#nome').html(' ');
+				$('#confirma').html(' ');
+				$('#codigoBarra').html(' ');
 
-			$('#confirma').html(' ');
-			$('#confirma').html('Sorteando..');
-			setInterval(function(){ console.log('sorteando'); 
+			 	var elem = document.getElementById("myBar"); 
+			    var width = 1;
+			    var id = setInterval(frame, 10);
+			    function frame() {
+			        if (width >= 100) {
+			            clearInterval(id);
+			        } else {
+			            width+= 0.2; 
+			            elem.style.width = width + '%'; 
+			        }
+			    }
 
+			$('#confirma').html('<br><h3><b>Sorteando...<b></h3> ');
+			
+			var stop = setInterval(function(){
+				console.log('entrou no ajax');
 				$.ajax({
 					type: "POST",
 					url: "../model/sortear.php",
@@ -125,13 +115,14 @@
 					success: function(data){
 						console.log(data);
 						$('#nome').html(' ');
-						$('#ncod').html(' ');
+						
 						$('#confirma').html(' ');
+						$('#codigoBarra').html(' ');
 						$('#nsorteado').html(' ');
 
-						$('#nome').append(data['nome']);
-						$('#ncod').append(env.codigo_barra);
-						$('#nsorteado').append(data['codBar']);
+						$('#nome').append(data['nome'].toUpperCase());
+						
+						$('#codigoBarra').append(data['cod_bar']);
 
 					},
 					error: function(data){
@@ -139,13 +130,13 @@
 						console.log("Alerta: Erro ao buscar");
 						$('#confirma').html(' ');
 						$('#nome').html(' ');
-						$('#ncod').html(' ');
-						$('#ncod').append(env.codigo_barra);
+						
+						
 						$('#confirma').append("<div class='alert alert-danger'><p>A Data Atual não corresponde ao cronograma do evento!<br>Verifique se a data do computador está de acordo com a data atual<p></div>");
 					}
 
 				});
-				clearInterval();
+				clearInterval(stop);
 			}, 5000);  
 		});         	
 	</script>
