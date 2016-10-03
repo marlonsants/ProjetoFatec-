@@ -1,105 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-
-	<link rel="stylesheet" href='webroot/css/bootstrap.min.css'>
-	<script src='webroot/js/jquery-2.1.1.min'></script>
-	<script src='webroot/js/bootstrap.min.js'></script>
-	
-	<title>Leitor de Código de Barras</title>
+    <title>4Events - Login</title>
+    <link rel="stylesheet" type="text/css" href="webroot/css/bootstrap.css">
 </head>
-
-<style type="text/css">
-	#borda{border: 1px solid #999; box-shadow: -0px -0px 45px #999;}
-</style>
-
 <body>
+    <div class="header">
+        <h1>4Events</h1>
+        <h4>Sistema para Gestão de Eventos Científicos<hr></h4>
+    </div>
+    <div class="col-md-12">
+       <form id="formcad" method="post" action="view/cadastro" class="col-md-12 col-xs-12 col-lg-12">
+        <div class="container" >
+            <div id="boxLoggin">
+                <div class="jumbotron col-md-6 col-md-offset-3" id="cadastrar">
+                    <a href="/cadastrar" id="novo">Já é registrado ?</a>
+                </div>
+                <!-- Inicio da caixa de login -->
+                <div class="jumbotron col-md-6 col-md-offset-3" id="centerbox"> 
+                 <div class="col-md-10 col-md-offset-1" id="usuario">
 
-<div class="container-fluid"><br>
-	
-	<div class="row">
 
-		<div class="col-md-8 col-md-offset-2 col-xs-8" >
+                     <!-- Informa se o cadastro foi Feito com Sucesso -->
+                     <?php if(isset($usuario)){ ?>
+                      <div class="alert alert-success"><center> <?php $usuario ?> cadastrado com sucesso! </center></div>
+                      <?php } ?>
 
-			<div id="borda" style="color: rgb(50,180,74);">
-				<img src="webroot/images/borda_cima.jpg" style="width: 100%">
 
-				<div class="col-md-2 col-xs-2">
-					<img src="webroot/images/logo_fatec.jpg" style="width: 100%;">
-					<img src="webroot/images/FUNEP.png" style="width: 100%;">
-				</div>
+                      <h3>Acesse sua conta!</h3>
 
-				<div class="col-md-2 col-xs-2">
-					<img src="webroot/images/logo_recortada.png" style="width: 100%;">
-				</div>
-
-				<div class="col-md-8 col-xs-8">
-					<h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
-				</div>
-
-				<div class="col-md-12 col-xs-12" id="borda" style=" border-color: rgb(40,145,58);"></div>
-
-				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" id="info">
-					<h3><b>Nome:</b><span id="nome"></span> </h3>
-					<h3><b>E-mail:</b><span id="email"></span> </h3>
-					<h3><b>Instituição:</b><span  id="inst"></span> </h3>
-					<h3 id="confirma" style="color:blue;text-align: center;font-weight: bold"></h3>
-				</div>
-
-				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
-					<center><label><h3 id="ncod"></h3></label></center>
-					<input type="text" id="codigo_barra" class="form-control">
-				</div>
-
-				<img src="webroot/images/borda_baixo.jpg" style="width: 100%">
-			</div>
-				
-		</div>
-		
-	</div>
+                      <!-- Mensagem de Erro Caso Exista-->
+                      <?php if(isset($erro)){ echo $erro;} ?>
+                  </div>
+                  <!-- input token -->
+                  <div>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </div>
+                <!-- input usuário -->
+                <div class="col-md-10 col-md-offset-1 form-group" id="usuario">
+                    <input type="text" name="usuario" placeholder="E-mail" class="col-md-12 form-control">
+                </div>
+                <!-- input senha -->
+                <div class="col-md-10 col-md-offset-1 form-group" id="senha">
+                    <input type="password" name="senha" placeholder="Senha" class="col-md-12 form-control">
+                </div>
+                <!-- Botão logar -->
+                <div class="col-md-2 col-md-offset-10" id="logar">
+                    <button type="submit" class="col-md-12 btn btn-info">Login</button>
+                </div>
+                <!-- Criar nova senha -->
+                <div class="jumbotron col-md-6 col-md-offset-3" id="novasenha">
+                    <a href="/redefinirsenha" id="esqueceu" >Esqueceu sua senha?</a>
+                </div>
+            </div>
+            <!-- Fim da caixa de login  -->
+        </div>
+    </div>
+</form>
 </div>
-
-<script type="text/javascript">
-	$(document).on('blur','#codigo_barra',function(){ 
-	var env = {};
-		env.codigo_barra = $('#codigo_barra').val();
-		 $.ajax({
-	                        type: "POST",
-	                        url: "model/confirmaPresenca.php",
-	                        data: env,
-	                        dataType: 'json',
-	                        success: function(data){
-	                          console.log(data);
-	                           $('#nome').html(' ');
-	                           $('#inst').html(' ');
-	                           $('#email').html(' ');
-	                           $('#ncod').html(' ');
-	                           $('#confirma').html(' ');
-	                            
-	                          $('#nome').append(data['nome']);
-	                          $('#inst').append(data['instituicao']);
-	                          $('#email').append(data['email']);
-	                          $('#ncod').append(env.codigo_barra);
-	                          $('#confirma').append("Presença confirmada");
-	                            
-	                        },
-	                        error: function(data){
-	                            console.log(data);
-	                            console.log("Alerta: Erro ao buscar");
-	                            $('#confirma').html(' ');
-	                            $('#nome').html(' ');
-	                           $('#inst').html(' ');
-	                           $('#email').html(' ');
-	                           $('#ncod').html(' ');
-	                           $('#ncod').append(env.codigo_barra);
-	                            $('#confirma').append("O código informado não corresponde a nenhum partipante cadastrado, verifique e tente novamente");
-	                        }
-	    });
-    });                 
-	
-
-</script>
-
 </body>
 </html>
+
+<style type="text/css">
+    body{background-color:  #F8F7FF;}
+    /*Caixa de Destaque com o nome do Sistema*/
+    .header{background-color: #33B5E5; color:#fff; text-align: center; font-weight: bolder; height:300px; margin-top: -21px}
+    /*Box que Guarda todo o Conteudo do login*/
+    #boxLoggin{margin-top: -150px;}
+    /*Jumbotron de Registro*/
+    #cadastrar{background-color: #364152; padding: 10px; margin-bottom:0;text-align: right; }
+    #novo{color:#fff; font-weight: bold;} 
+    /*Título 'Acesse Sua Conta' */
+    h3{color: #33B5E5;}
+    /*Jumbotron Central*/
+    #centerbox{background-color: #fff;margin-bottom:-5px; margin-top: -5px; border-radius:0px; box-shadow: 0 0 25px #777;}
+    /*Botão de Login*/
+    .btn-info{background-color: #364152; border: #364152; border-radius:100%; height:60px; width:60px;}
+    .btn-info:hover{background-color: #33B5E5;}
+    /*Jumbotron nova senha*/
+    #novasenha{background-color: #F2F2F2; padding: 20px; margin-top:0;text-align: center;}
+    /*Link Esqueceu sua senha?*/
+    #esqueceu{color: #000;}
+</style>

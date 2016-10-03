@@ -1,14 +1,23 @@
 <?php
 	require_once('../config/funcoesmysql.php');
-	
-							 	
-	
-	$info = select('p.*,c.dia1,c.codBar','controle_presenca as c LEFT JOIN  participante as p on c.id_participante = p.id_participante','c.dia1 = 1 ORDER BY rand() ');
-	if($info){
-		echo json_encode($info[0]);	
-	}else{
+	$dia = date('Y-m-d');
+		if($dia == '2016-10-03'){
+			$info = select('*','participante','dia_1 = 1 ORDER BY rand() ');
+			echo json_encode($info[0]);	
+		}else if($dia == '2016-10-04'){
+			$info = select('*','participante','dia_2 = 1 ORDER BY rand() ');
+			echo json_encode($info[0]);	
+		}else if($dia == '2016-10-05'){
+			$info = select('*','participante','dia_3 = 1 ORDER BY rand() ');
+			echo json_encode($info[0]);	
+		}else if($dia == '2016-10-06'){
+			$info = select('*','participante','dia_4 = 1 ORDER BY rand() ');
+			echo json_encode($info[0]);	
+		}else if($dia == '2016-10-07'){
+			$info = select('*','participante','dia_5 = 1 ORDER BY rand() ');
+			echo json_encode($info[0]);	
+		}else{
 		echo 'erro ao sortear';
-		echo $info;
 	}
 	
 ?> 

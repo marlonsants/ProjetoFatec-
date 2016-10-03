@@ -39,8 +39,6 @@
 
 				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" id="info">
 					<h3><b>Nome:</b><span id="nome"></span> </h3>
-					<h3><b>E-mail:</b><span id="email"></span> </h3>
-					<h3><b>Instituição:</b><span  id="inst"></span> </h3>
 					<h3 id="confirma" style="color:blue;text-align: center;font-weight: bold"></h3>
 				</div>
 
@@ -78,17 +76,12 @@
 	                        success: function(data){
 	                          console.log(data);
 	                           $('#nome').html(' ');
-	                           $('#inst').html(' ');
-	                           $('#email').html(' ');
 	                           $('#ncod').html(' ');
 	                           $('#confirma').html(' ');
 	                           $('#nsorteado').html(' ');
 	                            
 	                          $('#nome').append(data['nome']);
-	                          $('#inst').append(data['instituicao']);
-	                          $('#email').append(data['email']);
 	                          $('#ncod').append(env.codigo_barra);
-	                          $('#confirma').append("Presença confirmada");
 	                          $('#nsorteado').append(data['codBar']);
 	                            
 	                        },
@@ -97,11 +90,9 @@
 	                            console.log("Alerta: Erro ao buscar");
 	                            $('#confirma').html(' ');
 	                            $('#nome').html(' ');
-	                           $('#inst').html(' ');
-	                           $('#email').html(' ');
 	                           $('#ncod').html(' ');
 	                           $('#ncod').append(env.codigo_barra);
-	                            $('#confirma').append("O código informado não corresponde a nenhum partipante cadastrado, verifique e tente novamente");
+	                            $('#confirma').append("<div class='alert alert-danger'><p>A Data Atual não corresponde ao cronograma do evento!<br>Verifique a data do evento<p></div>");
 	                        }
 	    });
     });            	
