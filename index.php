@@ -41,35 +41,40 @@
 
                         <!-- Informa se o cadastro foi Feito com Sucesso -->
                         <?php if(isset($usuario)){ ?>
-                        <div class="alert alert-success"><center> <?php $usuario ?> cadastrado com sucesso! </center></div>
+                            <div class="alert alert-success col-md-12"><center> <?php $usuario ?> cadastrado com sucesso! </center></div>
                         <?php } ?>
 
                         <center class="col-md-12"><h3>Acesse sua conta!</h3></center>
-                        <?php 
-                        		if(isset($_GET['erro'])){
-                        			switch ($_GET['erro']) {
-                        				case 1:
-                        					echo '<div style="text-align:center;color:red;font-weight:bold">Usuario não cadastrado, verique e tente novamente</div>';
-                        					break;
-                        				case 2:
-                        					echo '<div style="text-align:center;color:red;font-weight:bold">O nome de usuario está incorreto, verifique e tente novamente</div>';
-                        					break;
-                        				case 3:
-                        					echo '<div style="text-align:center;color:red;font-weight:bold">A senha está incorreta, verifique e tente novamente</div>';
-                        					break;	
-                        				default:
-                        					# code...
-                        					break;
-                        			}
-                        			
-                        		} 
-                        ?>
+
+                        <div class="col-md-12">
+                            <?php 
+                                if(isset($_GET['erro'])){
+                                    switch ($_GET['erro']) {
+                                        case 1:
+                                            echo '<div style="text-align:center;color:red;font-weight:bold">Usuario não cadastrado, verique e tente novamente</div>';
+                                            break;
+                                        case 2:
+                                            echo '<div style="text-align:center;color:red;font-weight:bold">O nome de usuario está incorreto, verifique e tente novamente</div>';
+                                            break;
+                                        case 3:
+                                            echo '<div style="text-align:center;color:red;font-weight:bold">A senha está incorreta, verifique e tente novamente</div>';
+                                            break;  
+                                        default:
+                                            # code...
+                                            break;
+                                    }
+                                    
+                                } 
+                            ?>
+                        </div>
 
                         <!-- Mensagem de Erro Caso Exista-->
-                        <?php if(isset($erro)){ echo $erro;} ?>
+                        <div class="col-md-10 col-md-offset-1">
+                            <?php if(isset($erro)){ echo $erro;} ?>
+                        </div>
 
                         <!-- input token -->
-                        <div>
+                        <div class="col-md-10 col-md-offset-1">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         </div>
 
@@ -83,12 +88,11 @@
                             <input type="password" name="senha" placeholder="Senha" class="col-md-12 form-control">
                         </div>
 
-                       
-
                         <!-- Botão logar -->
                         <div class="col-md-2 col-md-offset-5" id="logar">
                             <button type="submit" class="col-md-12 btn btn-info">Login</button>
                         </div>
+
                     </form>
 
                     <img src="webroot/images/borda_baixo.jpg" style="width: 100%">
