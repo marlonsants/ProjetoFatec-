@@ -20,22 +20,19 @@
 
 		<div class="row">
 
-			<div class="col-md-8 col-md-offset-2 col-xs-8" >
+			<div class="col-md-10 col-md-offset-1 col-xs-8" >
 
 				<div id="borda" style="color: rgb(50,180,74);">
 					<img src="../webroot/images/borda_cima.jpg" style="width: 100%">
 
 					<div class="col-md-2 col-xs-2">
-						<img src="../webroot/images/logo_fatec.jpg" style="width: 100%;">
-						<img src="../webroot/images/FUNEP.png" style="width: 100%;">
-					</div>
-
-					<div class="col-md-2 col-xs-2">
 						<img src="../webroot/images/logo_recortada.png" style="width: 100%;">
+						<img src="../webroot/images/logo_fatec.jpg" style="width: 100%;">
+
 					</div>
 
-					<div class="col-md-8 col-xs-8">
-						<h2>IV Simpósio de Tecnologia Sucroenergética e de Biocombustíveis<br>Fatec - Jaboticabal-SP</h2>
+					<div class="col-md-8 col-md-offset-1 col-xs-8">
+						<h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
 					</div>
 
 					<?php include('menu.php'); ?>
@@ -44,22 +41,89 @@
 
 					<!--Lista de presença no dia-->
 					<div class="row">
-						<h3 class="col-md-10 col-md-offset-1"><b>Data: </b>XX/XX/XXXX</h3>
+						<h3 class="col-md-10 col-md-offset-1" id="lista"><center>Lista de Presença</center></h3>
 					</div>
+					<div id="divtab">
+						<table class="table table-condensed table-hover table-striped" id="tabela" >
+							<thead>
+								<tr>
+									<th>Código</th>
+									<th>Nome</th>
+									<th>03/09/2016</th>
+									<th>04/09/2016</th>
+									<th>05/09/2016</th>
+									<th>06/09/2016</th>
+									<th>07/09/2016</th>
+								</tr>
+							</thead>
+							<tbody>
 
-					<h3 class="row">
-						<div class="col-md-5 col-md-offset-1"><b>Nome: </b>Teste1</div>
-						<div class="col-md-5"><b>Código: </b>1234567890</div>
-					</h3>
-					<!--Fim Lista de presença no dia-->
+								<?php 
 
-					<img src="../webroot/images/borda_baixo.jpg" style="width: 100%">
+								require_once('../config/funcoesmysql.php');
+
+								$usuarios = select('*', 'participante','1');
+								if(isset($usuarios) and !empty($usuarios)){
+									foreach ($usuarios as $key => $value) {
+										echo'<tr>';
+										echo'<td class="text text-info">' . $value['cod_bar']. '</td>';
+										echo'<td class="text text-info">' . $value['nome']. 	  '</td>';
+
+										if($value['dia_1'] == 1){
+											echo'<td class="text text-success">Presente</text></td>';
+										}else{
+											echo'<td class="text text-danger">Ausente</text></td>';
+										}
+
+										if($value['dia_2'] == 1){
+											echo'<td class="text text-success">Presente</text></td>';
+										}else{
+											echo'<td class="text text-danger">Ausente</text></td>';
+										}
+
+										if($value['dia_3'] == 1){
+											echo'<td class="text text-success">Presente</text></td>';
+										}else{
+											echo'<td class="text text-danger">Ausente</text></td>';
+										}
+
+										if($value['dia_4'] == 1){
+											echo'<td class="text text-success">Presente</text></td>';
+										}else{
+											echo'<td class="text text-danger">Ausente</text></td>';
+										}
+
+										if($value['dia_5'] == 1){
+											echo'<td class="text text-success">Presente</text></td>';
+										}else{
+											echo'<td class="text text-danger">Ausente</text></td>';
+										}
+									}
+									echo'</tr>';
+								}?>
+							</tbody>
+						</table>
+					</div>
 				</div>
-				
+				<!--Fim Lista de presença no dia-->
+
+				<img src="../webroot/images/borda_baixo.jpg" style="width: 100%">
 			</div>
 
 		</div>
+
 	</div>
+</div>
 
 </body>
 </html>
+
+<style type="text/css" media="screen">
+	table{text-align: center;}
+	td{font-weight: bold; text-align: center;}
+	th{font-weight: bolder; text-align: center; font-size: 1.1em}
+	#lista{margin-bottom: 50px; 	}
+	#tabela{overflow: auto;}
+	#divtab{height: 300px; overflow: auto;}
+</style>
+

@@ -4,9 +4,9 @@ require_once('../config/funcoesmysql.php');
 $codBarInput = $_POST['codigo_barra'];
 $confirma = select('*','participante',"cod_bar = '".$codBarInput."' ");
 	if(!empty($confirma)){
+		date_default_timezone_set('America/Sao_Paulo');
 		$dia = date('Y-m-d');
-
-		if($dia == '2016-09-28'){	
+		if($dia == '2016-10-03'){	
 			$teste = updatemysql('dia_1 = 1','participante',"cod_bar = '".$codBarInput."' ");			
 			echo json_encode($confirma);
 		}else if($dia == '2016-10-04' ){

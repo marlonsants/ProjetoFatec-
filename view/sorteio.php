@@ -45,23 +45,20 @@
 	
 	<div class="row">
 
-		<div class="col-md-8 col-md-offset-2 col-xs-8" >
+            <div class="col-md-10 col-md-offset-1 col-xs-8" >
 
-			<div id="borda" style="color: rgb(50,180,74);">
-				<img src="../webroot/images/borda_cima.jpg" style="width: 100%">
+                <div id="borda" style="color: rgb(50,180,74);">
+                    <img src="../webroot/images/borda_cima.jpg" style="width: 100%">
 
-				<div class="col-md-2 col-xs-2">
-					<img src="../webroot/images/logo_fatec.jpg" style="width: 100%;">
-					<img src="../webroot/images/FUNEP.png" style="width: 100%;">
-				</div>
+                    <div class="col-md-2 col-xs-2">
+                        <img src="../webroot/images/logo_recortada.png" style="width: 100%;">
+                        <img src="../webroot/images/logo_fatec.jpg" style="width: 100%;">
+                
+                    </div>
 
-				<div class="col-md-2 col-xs-2">
-					<img src="../webroot/images/logo_recortada.png" style="width: 100%;">
-				</div>
-
-				<div class="col-md-8 col-xs-8">
-					<h2>IV Simpósio de Tecnologia Sucroenergética e de Biocombustíveis<br>Fatec - Jaboticabal-SP</h2>
-				</div>
+                    <div class="col-md-8 col-md-offset-1 col-xs-8">
+                        <h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
+                    </div>
 
 				<?php include('menu.php'); ?>
 
@@ -86,7 +83,7 @@
 
 					</div>
 
-					<div class="col-md-8 col-xs-8" style="font-size: 200%" id="nsorteado">
+					<div class="col-md-10 col-xs-8 col-md-offset-1" style="font-size: 200%" id="nsorteado">
 						<?php require_once('../config/funcoesmysql.php'); ?>
 					</div>
 					
