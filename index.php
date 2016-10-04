@@ -14,7 +14,7 @@
         <div class="container" >
             <div id="boxLoggin">
                 <div class="jumbotron col-md-6 col-md-offset-3" id="cadastrar">
-                    <a href="/cadastrar" id="novo">Já é registrado ?</a>
+                    <a href="view/cadastro.php" id="novo">Já é registrado ?</a>
                 </div>
                 <!-- Inicio da caixa de login -->
                 <div class="jumbotron col-md-6 col-md-offset-3" id="centerbox"> 
@@ -48,10 +48,6 @@
                 <div class="col-md-2 col-md-offset-10" id="logar">
                     <button type="submit" class="col-md-12 btn btn-info">Login</button>
                 </div>
-                <!-- Criar nova senha -->
-                <div class="jumbotron col-md-6 col-md-offset-3" id="novasenha">
-                    <a href="/redefinirsenha" id="esqueceu" >Esqueceu sua senha?</a>
-                </div>
             </div>
             <!-- Fim da caixa de login  -->
         </div>
@@ -75,7 +71,7 @@
     /*Jumbotron Central*/
     #centerbox{background-color: #fff;margin-bottom:-5px; margin-top: -5px; border-radius:0px; box-shadow: 0 0 25px #777;}
     /*Botão de Login*/
-    .btn-info{background-color: #364152; border: #364152; border-radius:100%; height:60px; width:60px;}
+    .btn-info{background-color: #364152; border: #364152; height:60px; width:60px;}
     .btn-info:hover{background-color: #33B5E5;}
     /*Jumbotron nova senha*/
     #novasenha{background-color: #F2F2F2; padding: 20px; margin-top:0;text-align: center;}
