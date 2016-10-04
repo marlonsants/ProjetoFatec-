@@ -1,5 +1,6 @@
 <?php
 	require_once('../config/funcoesmysql.php');
+		date_default_timezone_set('America/Sao_Paulo');
 	$dia = date('Y-m-d');
 		if($dia == '2016-10-03'){
 			$info = select('*','participante','dia_1 = 1 ORDER BY rand() ');
