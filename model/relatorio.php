@@ -14,36 +14,36 @@
 		if(isset($usuarios) and !empty($usuarios)){
 			foreach ($usuarios as $key => $value) {
 				echo'<tr>';
-				echo'<td class="text text-info">' . $value['cod_bar']. '</td>';
-				echo'<td class="text text-info">' . $value['nome']. 	  '</td>';
+				echo'<td style="color:blue">' . $value['cod_bar']. '</td>';
+				echo'<td style="color:blue">' . $value['nome']. 	  '</td>';
 				if($value['dia_1'] == 1 ){
-					echo'<td class="text text-success">Presente</text></td>';
+					echo'<td style="color:green">Presente</text></td>';
 				}else{
-					echo'<td class="text text-danger">Ausente</text></td>';
+					echo'<td style="color:red">Ausente</text></td>';
 				}
 
 				if($value['dia_2'] == 1 ){
-					echo'<td class="text text-success">Presente</text></td>';
+					echo'<td style="color:green">Presente</text></td>';
 				}else{
-					echo'<td class="text text-danger">Ausente</text></td>';
+					echo'<td style="color:red">Ausente</text></td>';
 				}
 
 				if($value['dia_3'] == 1 ){
-					echo'<td class="text text-success">Presente</text></td>';
+					echo'<td style="color:green">Presente</text></td>';
 				}else{
-					echo'<td class="text text-danger">Ausente</text></td>';
+					echo'<td style="color:red">Ausente</text></td>';
 				}
 
 				if($value['dia_4'] == 1 ){
-					echo'<td class="text text-success">Presente</text></td>';
+					echo'<td style="color:green">Presente</text></td>';
 				}else{
-					echo'<td class="text text-danger">Ausente</text></td>';
+					echo'<td style="color:red">Ausente</text></td>';
 				}
 
 				if($value['dia_5'] == 1 ){
-					echo'<td class="text text-success">Presente</text></td>';
+					echo'<td style="color:green">Presente</text></td>';
 				}else{
-					echo'<td class="text text-danger">Ausente</text></td>';
+					echo'<td style="color:red">Ausente</text></td>';
 				}
 			}
 			echo'</tr>';
