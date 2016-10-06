@@ -22,7 +22,7 @@
 
             <div class="col-md-10 col-md-offset-1 col-xs-8" >
 
-                <div id="borda" style="color: rgb(50,180,74);">
+                <div id="borda" >
                     <img src="../webroot/images/borda_cima.jpg" style="width: 100%">
 
                     <div class="col-md-2 col-xs-2">
@@ -31,7 +31,7 @@
                 
                     </div>
 
-                    <div class="col-md-8 col-md-offset-1 col-xs-8">
+                    <div class="col-md-8 col-md-offset-1 col-xs-8" style="color: rgb(50,180,74);"><br><br><br>
                         <h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
                     </div>
 

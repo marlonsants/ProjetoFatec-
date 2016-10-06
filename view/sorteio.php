@@ -56,7 +56,7 @@
 
 					</div>
 
-					<div class="col-md-8 col-md-offset-1 col-xs-8">
+					<div class="col-md-8 col-md-offset-1 col-xs-8"><br><br><br>
 						<h2>IV Simposio de Tecnologia Sucroenergetica e de Biocombustiveis<br>Fatec - Jaboticabal-SP</h2>
 					</div>
 

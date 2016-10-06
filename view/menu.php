@@ -1,15 +1,15 @@
 <style type="text/css">
-  .meulink{color: rgb(50,180,74); text-decoration:none; border-radius: 10px;}
+  .meulink{color: #000; text-decoration:none; border-radius: 10px; margin-right: 5px; margin-bottom: 10px;}
   .meulink:hover{color: white; text-decoration:none; background-color: rgb(50,180,74);}
 
-  .meulinksair{color: rgb(50,180,74); text-decoration:none; border-radius: 10px;}
+  .meulinksair{color: #000; text-decoration:none; border-radius: 10px; margin-bottom: 10px;}
   .meulinksair:hover{color: white; text-decoration:none; background-color: #E84C3A;}
   .active{color: white; text-decoration:none; background-color: rgb(50,180,74);}
 </style>
 <div class="col-md-12"><br>
 <nav>
-  <a href="leitor_codigo.php?id=leitor_codigo" id="leitor_codigo" class=" meulink col-md-3 col-md-offset-1 ">
-    <center><h4><span class="glyphicon glyphicon-barcode"></span> Verificar Cracha</h4></center>
+  <a href="leitor_codigo.php?id=leitor_codigo" id="leitor_codigo" class=" meulink col-md-2 col-md-offset-1 ">
+    <center><h4><span class="glyphicon glyphicon-barcode"></span> Identificação</h4></center>
   </a>
 
   <a href="sorteio.php?id=sorteio" id="sorteio" class=" meulink col-md-2">
