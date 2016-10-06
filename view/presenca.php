@@ -63,40 +63,56 @@
 								require_once('../config/funcoesmysql.php');
 
 								$usuarios = select('*', 'participante','1');
+								$dia1 = '2016-10-03';
+								$dia2 = '2016-10-04';
+								$dia3 = '2016-10-05';
+								$dia4 = '2016-10-06';
+								$dia5 = '2016-10-07';
+								date_default_timezone_set('America/Sao_Paulo');
+								$dia = date('Y-m-d');
 								if(isset($usuarios) and !empty($usuarios)){
 									foreach ($usuarios as $key => $value) {
 										echo'<tr>';
 										echo'<td class="text text-info">' . $value['cod_bar']. '</td>';
 										echo'<td class="text text-info">' . $value['nome']. 	  '</td>';
-
-										if($value['dia_1'] == 1){
+										if(strtotime($dia1) <= strtotime($dia) and $value['dia_1'] == 1 ){
 											echo'<td class="text text-success">Presente</text></td>';
-										}else{
+										}else if(strtotime($dia1) <= strtotime($dia) and $value['dia_1'] != 1 ){
 											echo'<td class="text text-danger">Ausente</text></td>';
+										}else{
+											echo'<td class="text text-primary"> - </text></td>';
 										}
 
-										if($value['dia_2'] == 1){
+										if(strtotime($dia2) <= strtotime($dia) and $value['dia_2'] == 1 ){
 											echo'<td class="text text-success">Presente</text></td>';
-										}else{
+										}else if(strtotime($dia2) <= strtotime($dia) and $value['dia_2'] != 1 ){
 											echo'<td class="text text-danger">Ausente</text></td>';
+										}else{
+											echo'<td class="text text-primary"> - </text></td>';
 										}
 
-										if($value['dia_3'] == 1){
+										if(strtotime($dia3) <= strtotime($dia) and $value['dia_3'] == 1 ){
 											echo'<td class="text text-success">Presente</text></td>';
-										}else{
+										}else if(strtotime($dia3) <= strtotime($dia) and $value['dia_3'] != 1 ){
 											echo'<td class="text text-danger">Ausente</text></td>';
+										}else{
+											echo'<td class="text text-primary"> - </text></td>';
 										}
 
-										if($value['dia_4'] == 1){
+										if(strtotime($dia4) <= strtotime($dia) and $value['dia_4'] == 1 ){
 											echo'<td class="text text-success">Presente</text></td>';
-										}else{
+										}else if(strtotime($dia4) <= strtotime($dia) and $value['dia_4'] != 1 ){
 											echo'<td class="text text-danger">Ausente</text></td>';
+										}else{
+											echo'<td class="text text-primary"> - </text></td>';
 										}
 
-										if($value['dia_5'] == 1){
+										if(strtotime($dia5) <= strtotime($dia) and $value['dia_5'] == 1 ){
 											echo'<td class="text text-success">Presente</text></td>';
-										}else{
+										}else if(strtotime($dia5) <= strtotime($dia) and $value['dia_5'] != 1 ){
 											echo'<td class="text text-danger">Ausente</text></td>';
+										}else{
+											echo'<td class="text text-primary"> - </text></td>';
 										}
 									}
 									echo'</tr>';
